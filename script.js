@@ -17,11 +17,11 @@ function createRows() {
         };
         var newRow = $("<div>").addClass("row d-flex time-block past").attr("id", hourArray[i]);
         
-        newRow.append($("<div>" + hourArray[i] + "</div>").addClass("col-1 hour"));
+        newRow.append($("<div>" + hourArray[i] + "</div>").addClass("col-sm-2 hour"));
 
-        newRow.append($("<textarea placeholder='Add Event'>" + savedText + "</textarea>").addClass("col-10"));
+        newRow.append($("<textarea placeholder='Add Event'>" + savedText + "</textarea>").addClass("col-sm-9"));
 
-        newRow.append($("<button type='button submit' class='btn btn-primary saveBtn col-1'>Save</button>"));
+        newRow.append($("<button type='button submit' class='btn btn-primary saveBtn col-sm-1'>Save</button>"));
 
         $(".container").append(newRow);
 
