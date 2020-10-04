@@ -28,7 +28,7 @@ function createRows() {
        
         
     };
-    $("button").on("click", function() {
+    $(".saveBtn").on("click", function() {
         var userInput = $(this).siblings("textarea").val();
         var hour = $(this).siblings("div").text();
         console.log(userInput);
@@ -36,8 +36,16 @@ function createRows() {
         localStorage.setItem(hour, userInput);
     });
      
+    $("#clear-events").on("click", function(event){
+        event.preventDefault();
+        window.localStorage.clear();
+        $(".time-block").remove();
+        createRows();
+    })
 
 };
+
+
 
 //    function saveEvent() {
 //        $(".btn").on("click", function(event){
