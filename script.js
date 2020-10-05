@@ -61,22 +61,33 @@ function createRows() {
     });
      
     // clears all saved events from local storage and clears all of the input fields
-    $("#clear-events").on("click", function(event){
-        event.preventDefault();
-        // window.localStorage.clear();
-        // $(".time-block").remove();
-        // createRows();
-        var clearAll = confirm("Are you sure you would like to clear ALL of the events?");
-        if (clearAll === true){
-            window.localStorage.clear();
-        $(".time-block").remove();
-        createRows();
-        } else {
-            return;
-        };
-    });
+    // $("#clear-events").on("click", function(){
+    //     // event.preventDefault();
+    //     // window.localStorage.clear();
+    //     // $(".time-block").remove();
+    //     // createRows();
+    //     var clearAll = confirm("Are you sure you would like to clear ALL of the events?");
+    //     if (clearAll === true){
+    //         // event.preventDefault();
+    //         window.localStorage.clear();
+    //     $(".time-block").remove();
+    //     createRows();
+    //     };
+    // });
 updateBlocks();
 };
+
+// clears all saved events from local storage and clears all of the input fields
+$("#clear-events").on("click", function(event){
+    event.preventDefault();
+    // Double checks that you want to clear all events
+    var clearAll = confirm("Are you sure you would like to clear ALL of the events?");
+    if (clearAll === true){
+        window.localStorage.clear();
+    $(".time-block").remove();
+    createRows();
+    };
+});
 
 // This will run when the page is opened
 createRows();
