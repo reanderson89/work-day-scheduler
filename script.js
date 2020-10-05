@@ -39,7 +39,7 @@ function createRows() {
 
         newRow.append($("<textarea placeholder='Add Event'>" + savedText + "</textarea>").addClass("col-sm-9"));
 
-        newRow.append($("<button type='button submit' class='btn btn-primary saveBtn col-sm-1'>Save</button>"));
+        newRow.append($("<button type='button submit' class='btn btn-primary saveBtn col-sm-1'></button>").append("<i class='far fa-save fa-3x'></i>"));
 
         $(".container").append(newRow);
   
