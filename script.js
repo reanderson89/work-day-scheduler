@@ -6,7 +6,12 @@ var hourArray = ["9AM","10AM","11AM","12PM","1PM","2PM","3PM","4PM","5PM"];
 var militaryHoursArray = ["9","10","11","12","13","14","15","16","17"];
 // function definitions
 
-$("#currentDay").text(moment().format('MMMM Do YYYY'));
+
+var currentTime = setInterval( function(){
+    var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    document.getElementById("currentDay").innerHTML = time;  
+});
+
 
 function updateBlocks(){
 var currentHour = moment().hours();
@@ -35,11 +40,11 @@ function createRows() {
         };
         var newRow = $("<div>").addClass("row d-flex time-block past").attr("id", militaryHoursArray[i]);
         
-        newRow.append($("<div>" + hourArray[i] + "</div>").addClass("col-sm-2 hour"));
+        newRow.append($("<div>" + hourArray[i] + "</div>").addClass("col-2 hour"));
 
-        newRow.append($("<textarea placeholder='Add Event'>" + savedText + "</textarea>").addClass("col-sm-9"));
+        newRow.append($("<textarea placeholder='Add Event'>" + savedText + "</textarea>").addClass("col-9"));
 
-        newRow.append($("<button type='button submit' class='btn btn-primary saveBtn col-sm-1'></button>").append("<i class='far fa-save fa-3x'></i>"));
+        newRow.append($("<button type='button submit' class='btn btn-primary saveBtn col-1'></button>").append("<i class='far fa-save fa-2x'></i>"));
 
         $(".container").append(newRow);
   
